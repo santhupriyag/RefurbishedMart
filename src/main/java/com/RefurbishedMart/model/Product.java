@@ -4,10 +4,9 @@ import javax.persistence.Table;
 
 import org.springframework.data.annotation.Id;
 
-@Table(name ="Product" )
 public class Product {
 	
-	@Id
+
 	private Integer prodid;
 	private String prodname;
 	private Integer type;

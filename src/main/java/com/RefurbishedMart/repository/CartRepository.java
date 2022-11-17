@@ -1,5 +1,9 @@
 package com.RefurbishedMart.repository;
 
-public interface CartRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.RefurbishedMart.model.Cart;
+
+public interface CartRepository  {
 
 }

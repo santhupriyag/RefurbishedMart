@@ -6,6 +6,7 @@ import com.RefurbishedMart.model.User;
 
 public interface UserControllerAPI {
 
+	
 	public String login(@RequestBody User user);
 
 	public String register(@RequestBody User user);

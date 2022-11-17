@@ -4,10 +4,9 @@ import javax.persistence.Table;
 
 import org.springframework.data.annotation.Id;
 
-@Table(name ="Cart" )
+
 public class Cart {
 	
-	@Id
 	private String cartid;
 	private String userid;
 	private Product product;

@@ -4,10 +4,9 @@ import javax.persistence.Table;
 
 import org.springframework.data.annotation.Id;
 
-@Table(name ="Orders" )
+
 public class Order {
 	
-	@Id
 	private Integer orderid;
 	
 	private User user;

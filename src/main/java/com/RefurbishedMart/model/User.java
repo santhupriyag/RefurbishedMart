@@ -1,30 +1,60 @@
 package com.RefurbishedMart.model;
 
-import org.springframework.data.annotation.Id;
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Table(name ="user" )
+@Entity
+@Table(name = "user")
 public class User {
-	
+
 	@Id
-	private Integer userid;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "userid")
+	private Long userid;
+
+	@Column(name = "firstname")
+	private String firstname;
+
+	@Column(name = "lastname")
+	private String lastname;
+
+
+	@Column(name = "username")
 	private String username;
-	
+
+	@Column(name = "password")
 	private String password;
-	
+
+	@Column(name = "status")
 	private String status;
-	
+
+	@Column(name = "usertype")
 	private String usertype;
-	
+
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contact_id")
 	private Contact contact;
 	
 	public User() {
 		
 	}
 
-	public User(Integer userid, String username, String password, String status, String usertype, Contact contact) {
+	public User(Long userid, String firstname, String lastname, String email, String username, String password,
+			String status, String usertype, Contact contact) {
 		this.userid = userid;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.username = username;
 		this.password = password;
 		this.status = status;
@@ -32,13 +62,30 @@ public class User {
 		this.contact = contact;
 	}
 
-	public Integer getUserid() {
+	public Long getUserid() {
 		return userid;
 	}
 
-	public void setUserid(Integer userid) {
+	public void setUserid(Long userid) {
 		this.userid = userid;
 	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
 
 	public String getUsername() {
 		return username;
@@ -81,6 +128,4 @@ public class User {
 	}
 
 	
-	
-
 }

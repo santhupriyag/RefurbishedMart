@@ -1,13 +1,8 @@
 package com.RefurbishedMart.model;
 
-import javax.persistence.Table;
-
-import org.springframework.data.annotation.Id;
-
-@Table(name ="Category" )
 public class Category {
 	
-	@Id
+	
 	private Integer categoryid;
 	private String categoryname;
 	

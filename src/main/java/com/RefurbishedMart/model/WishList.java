@@ -2,7 +2,7 @@ package com.RefurbishedMart.model;
 
 import javax.persistence.Table;
 
-@Table(name ="WishList" )
+
 public class WishList {
 	
 	private String wishlistid;

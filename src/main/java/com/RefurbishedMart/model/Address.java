@@ -1,18 +1,63 @@
 package com.RefurbishedMart.model;
 
-public class Address {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name = "Address")
+public class Address {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+	@Column(name = "aptno")
 	private String aptno;
 	
+	@Column(name = "street")
 	private String street;
 	
+	@Column(name = "pincode")
 	private Integer pincode;
 	
+	@Column(name = "city")
 	private String city;
 	
+	@Column(name = "state")
 	private String state;
 	
+	@Column(name = "country")
 	private String country;
+	
+	
+
+	public Address() {
+	
+	}
+
+	public Address(Long id, String aptno, String street, Integer pincode, String city, String state, String country) {
+		this.id = id;
+		this.aptno = aptno;
+		this.street = street;
+		this.pincode = pincode;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getAptno() {
 		return aptno;
@@ -61,6 +106,7 @@ public class Address {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 	
 	
 }
