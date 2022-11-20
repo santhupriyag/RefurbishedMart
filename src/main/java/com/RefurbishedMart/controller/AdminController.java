@@ -1,7 +1,5 @@
 package com.RefurbishedMart.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.RefurbishedMart.controllerAPI.UserControllerAPI;
 import com.RefurbishedMart.model.User;
+import com.RefurbishedMart.response.RefurbishedMartResponse;
 import com.RefurbishedMart.service.AdminService;
 
 @RestController
@@ -21,28 +20,28 @@ public class AdminController implements UserControllerAPI {
 	AdminService AdminService;
 
 	
-	public String login(User user) {
+	public RefurbishedMartResponse login(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@PostMapping("/registerUser")
-	public String register(User user) {
+	public RefurbishedMartResponse register(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String forgotpassword(User user) {
+	public RefurbishedMartResponse forgotpassword(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String logout(User user) {
+	public RefurbishedMartResponse logout(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String editProfile(User user) {
+	public RefurbishedMartResponse editProfile(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}

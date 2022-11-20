@@ -23,7 +23,7 @@ public class Contact {
 	@Column(name = "phno")
 	private Long phno;
 	
-	@Column(name = "lastname")
+	@Column(name = "email")
 	private String email;
 	
 	@OneToOne(cascade = CascadeType.ALL)

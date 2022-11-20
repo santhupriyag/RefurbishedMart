@@ -8,4 +8,9 @@ import com.RefurbishedMart.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+
+	boolean existsByContact_Email(String email);
+
+	User findByContact_Email(String email);
+
 }

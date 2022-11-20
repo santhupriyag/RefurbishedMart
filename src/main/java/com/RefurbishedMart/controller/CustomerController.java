@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RefurbishedMart.controllerAPI.UserControllerAPI;
+import com.RefurbishedMart.exception.RefurbishedMartAccountNotFound;
+import com.RefurbishedMart.exception.RefurbishedMartAutheticationException;
+import com.RefurbishedMart.exception.RefurbishedMartException;
+import com.RefurbishedMart.exception.RefurbishedMartInvalidDataException;
 import com.RefurbishedMart.model.User;
+import com.RefurbishedMart.response.RefurbishedMartResponse;
 import com.RefurbishedMart.service.CustomerService;
 
 @RestController
@@ -21,34 +26,35 @@ public class CustomerController implements UserControllerAPI {
 	@Autowired
 	CustomerService CustomerService;
 
-	public String login(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	@PostMapping("/userLogin")
+	public RefurbishedMartResponse login(User user) throws RefurbishedMartAutheticationException, RefurbishedMartException, RefurbishedMartAccountNotFound {
+		return CustomerService.login(user);
 	}
 
 	@PostMapping("/registerUser")
-	public String register(User user) {
-		// TODO Auto-generated method stub
+	public RefurbishedMartResponse register(User user) throws RefurbishedMartInvalidDataException {
+
 		return CustomerService.register(user);
 	}
 
-	public String forgotpassword(User user) {
-		// TODO Auto-generated method stub
+	public RefurbishedMartResponse forgotpassword(User user) {
+
 		return null;
 	}
 
-	public String logout(User user) {
-		// TODO Auto-generated method stub
+	public RefurbishedMartResponse logout(User user) {
+
 		return null;
 	}
 
-	public String editProfile(User user) {
-		// TODO Auto-generated method stub
+	public RefurbishedMartResponse editProfile(User user) {
+
 		return null;
 	}
+
 	@GetMapping("/getUsers")
 	public List<User> getUsers() {
-		// TODO Auto-generated method stub
+
 		return CustomerService.getUsers();
 	}
 
