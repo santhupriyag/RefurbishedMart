@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RefurbishedMart.controllerAPI.UserControllerAPI;
+import com.RefurbishedMart.exception.RefurbishedMartAccountNotFound;
+import com.RefurbishedMart.exception.RefurbishedMartAutheticationException;
+import com.RefurbishedMart.exception.RefurbishedMartException;
+import com.RefurbishedMart.exception.RefurbishedMartInvalidDataException;
 import com.RefurbishedMart.model.User;
 import com.RefurbishedMart.response.RefurbishedMartResponse;
 import com.RefurbishedMart.service.AdminService;
@@ -17,18 +21,17 @@ import com.RefurbishedMart.service.AdminService;
 public class AdminController implements UserControllerAPI {
 	
 	@Autowired
-	AdminService AdminService;
+	AdminService adminService;
 
-	
-	public RefurbishedMartResponse login(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	@PostMapping("/userLogin")
+	public RefurbishedMartResponse login(User user) throws RefurbishedMartAutheticationException, RefurbishedMartException, RefurbishedMartAccountNotFound {
+		return adminService.login(user);
 	}
 
 	@PostMapping("/registerUser")
-	public RefurbishedMartResponse register(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public RefurbishedMartResponse register(User user) throws RefurbishedMartInvalidDataException {
+
+		return adminService.register(user);
 	}
 
 	public RefurbishedMartResponse forgotpassword(User user) {
