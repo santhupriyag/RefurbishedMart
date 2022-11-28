@@ -3,6 +3,7 @@ package com.RefurbishedMart.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import com.RefurbishedMart.constant.RefurbishedMartMessage;
@@ -14,7 +15,7 @@ import com.RefurbishedMart.util.UUIDUtil;
 
 @Component
 public class ProductServiceImpl implements ProductService {
-	
+
 	@Autowired
 	ProductRepository prodRepo;
 
@@ -31,6 +32,27 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> findAll() {
 		// TODO Auto-generated method stub
 		return prodRepo.findAll();
+	}
+
+	@Override
+	public ResponseEntity<Product> getProductById(String pId) {
+		Product product = prodRepo.findByProdid(pId);
+
+		return ResponseEntity.ok().body(product);
+	}
+
+	@Override
+	public RefurbishedMartResponse deleteProduct(String prodid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public RefurbishedMartResponse updateProduct(Product product) {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		prodRepo.save(product);
+		response.setMessage(RefurbishedMartMessage.RM_PRODUCT_UPDATE_SUCCESS);
+		return response;
 	}
 
 }

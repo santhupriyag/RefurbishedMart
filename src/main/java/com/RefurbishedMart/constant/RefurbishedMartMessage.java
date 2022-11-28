@@ -18,5 +18,8 @@ public interface RefurbishedMartMessage {
 	String RM_CATEGORY_EXITS = "Category Already Exists!";
 	String RM_CATEGORY_ADDED = "Category Added SucessFully!";
 	String RM_PRODUCT_ADDED = "Product Added SucessFully!";
+	String RM_PRODUCT_UPDATE_SUCCESS = "Product updated SucessFully!";
+	String RM_CART_ADDED = "Product added to Cart SucessFully!";
+	String RM_CART_DELETED = "Product Deleted SucessFully!";
 
 }

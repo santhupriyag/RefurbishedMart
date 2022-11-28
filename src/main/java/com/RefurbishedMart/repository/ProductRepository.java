@@ -9,4 +9,6 @@ import com.RefurbishedMart.model.User;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
+	Product findByProdid(String pId);
+
 }

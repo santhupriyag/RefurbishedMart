@@ -49,9 +49,9 @@ public class Product {
 	public Product() {
 
 	}
-	public Product(String prodid, String prodname, String type, String brand, Category category, String imgpath,
+	public Product(Long id,String prodid, String prodname, String type, String brand, Category category, String imgpath,
 			Double price, String description) {
-		super();
+	    this.id=id;
 		this.prodid = prodid;
 		this.prodname = prodname;
 		this.type = type;
@@ -60,6 +60,13 @@ public class Product {
 		this.imgpath = imgpath;
 		this.price = price;
 		this.description = description;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getProdid() {
 		return prodid;
