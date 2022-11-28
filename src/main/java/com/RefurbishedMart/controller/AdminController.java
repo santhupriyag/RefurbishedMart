@@ -1,7 +1,11 @@
 package com.RefurbishedMart.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,9 +48,22 @@ public class AdminController implements UserControllerAPI {
 		return null;
 	}
 
+	@PostMapping("/editProfile")
 	public RefurbishedMartResponse editProfile(User user) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return  adminService.editProfile(user);
+	}
+	
+	@GetMapping("/getAdminByMail/{email}")
+	public User getUserByMail(@PathVariable("email") String email) {
+
+		return adminService.getAdminByMail(email);
+	}
+	
+	@GetMapping("/getAllUsers")
+	public List<User> getUsers() {
+
+		return adminService.getUsers();
 	}
 	
 

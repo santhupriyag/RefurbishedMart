@@ -14,5 +14,9 @@ public interface RefurbishedMartMessage {
 	String RM_AUTHNETICATION_FAILED = "Unable to Authenticate/Incorrect Username or Password";
 	String RM_ACCOUNT_NOT_EXITS = "Account Not Exist, Please Register!";
 	String RM_USER_LOGIN_SUCCESS = "User Login SucessFully";
+	String RM_USER_PROFILE_UPDATE_SUCCESS = "User profile  updated SucessFully";
+	String RM_CATEGORY_EXITS = "Category Already Exists!";
+	String RM_CATEGORY_ADDED = "Category Added SucessFully!";
+	String RM_PRODUCT_ADDED = "Product Added SucessFully!";
 
 }

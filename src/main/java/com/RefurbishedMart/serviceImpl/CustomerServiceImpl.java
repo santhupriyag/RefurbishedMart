@@ -28,7 +28,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public RefurbishedMartResponse register(User user) throws RefurbishedMartInvalidDataException {
-
 		RefurbishedMartResponse response = new RefurbishedMartResponse();
 		boolean count = userRepo.existsByContact_Email(user.getContact().getEmail());
 		if (count) {
@@ -79,6 +78,20 @@ public class CustomerServiceImpl implements CustomerService {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public User getUserByMail(String email) {
+		// TODO Auto-generated method stub
+		return userRepo.getUserByContact_Email(email);
+	}
+
+	@Override
+	public RefurbishedMartResponse editProfile(User user) {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		userRepo.save(user);
+		response.setMessage(RefurbishedMartMessage.RM_USER_PROFILE_UPDATE_SUCCESS);
+		return response;
 	}
 
 }

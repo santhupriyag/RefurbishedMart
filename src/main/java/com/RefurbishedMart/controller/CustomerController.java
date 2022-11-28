@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,10 +47,17 @@ public class CustomerController implements UserControllerAPI {
 
 		return null;
 	}
-
+	
+	@PostMapping("/editProfile")
 	public RefurbishedMartResponse editProfile(User user) {
 
-		return null;
+		return  CustomerService.editProfile(user);
+	}
+	
+	@GetMapping("/getUserByMail/{email}")
+	public User getUserByMail(@PathVariable("email") String email) {
+
+		return CustomerService.getUserByMail(email);
 	}
 
 	@GetMapping("/getUsers")

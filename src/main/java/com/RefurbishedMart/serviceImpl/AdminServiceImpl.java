@@ -76,4 +76,24 @@ public class AdminServiceImpl implements AdminService {
 		return false;
 	}
 
+	@Override
+	public RefurbishedMartResponse editProfile(User user) {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		userRepo.save(user);
+		response.setMessage(RefurbishedMartMessage.RM_USER_PROFILE_UPDATE_SUCCESS);
+		return response;
+	}
+
+	@Override
+	public User getAdminByMail(String email) {
+		// TODO Auto-generated method stub
+		return userRepo.getUserByContact_Email(email);
+	}
+
+	@Override
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return userRepo.findAll();
+	}
+
 }

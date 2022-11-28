@@ -15,4 +15,10 @@ public interface AdminService {
 
 	RefurbishedMartResponse login(User user) throws RefurbishedMartAutheticationException, RefurbishedMartException, RefurbishedMartAccountNotFound;
 
+	RefurbishedMartResponse editProfile(User user);
+
+	User getAdminByMail(String email);
+
+	List<User> getUsers();
+
 }

@@ -17,4 +17,8 @@ public interface CustomerService {
 
 	RefurbishedMartResponse login(User user) throws RefurbishedMartAutheticationException, RefurbishedMartException, RefurbishedMartAccountNotFound;
 
+	User getUserByMail(String email);
+
+	RefurbishedMartResponse editProfile(User user);
+
 }

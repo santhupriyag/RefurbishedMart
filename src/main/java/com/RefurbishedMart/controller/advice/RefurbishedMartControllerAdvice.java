@@ -12,6 +12,7 @@ import com.RefurbishedMart.constant.RefurbishedMartCode;
 import com.RefurbishedMart.constant.RefurbishedMartMessage;
 import com.RefurbishedMart.exception.RefurbishedMartAccountNotFound;
 import com.RefurbishedMart.exception.RefurbishedMartAutheticationException;
+import com.RefurbishedMart.exception.RefurbishedMartCategoryAlreadyExitsException;
 import com.RefurbishedMart.exception.RefurbishedMartException;
 import com.RefurbishedMart.exception.RefurbishedMartInvalidDataException;
 import com.RefurbishedMart.response.RefurbishedMartErrorResponse;
@@ -45,7 +46,7 @@ private static final Logger LOG = LoggerFactory.getLogger(RefurbishedMartControl
 		return generateErrorResponse(RefurbishedMartMessage.RM_EXCPTION,RefurbishedMartCode.RM_EXCPTION);
 	}
 	
-	private RefurbishedMartErrorResponse generateErrorResponse(String errorCode,String errorMessage){
+	private RefurbishedMartErrorResponse generateErrorResponse(String errorMessage,String errorCode){
 		RefurbishedMartErrorResponse errorResponse = new RefurbishedMartErrorResponse();
 		errorResponse.setErrorCode(errorCode);
 		errorResponse.setErrorMessage(errorMessage);
@@ -58,6 +59,14 @@ private static final Logger LOG = LoggerFactory.getLogger(RefurbishedMartControl
 	public RefurbishedMartErrorResponse RefurbishedMartInvalidDataException(RefurbishedMartInvalidDataException e){
 		LOG.error(e.getMessage(),e);
 		return generateErrorResponse(RefurbishedMartMessage.RM_ACCOUNT_EXITS,RefurbishedMartCode.RM_ACCOUNT_EXITS);
+	}
+	
+	@ResponseStatus(HttpStatus.OK)
+	@ExceptionHandler(RefurbishedMartCategoryAlreadyExitsException.class)
+	@ResponseBody
+	public RefurbishedMartErrorResponse RefurbishedMartCategoryAlreadyExitsException(RefurbishedMartCategoryAlreadyExitsException e){
+		LOG.error(e.getMessage(),e);
+		return generateErrorResponse(RefurbishedMartMessage.RM_CATEGORY_EXITS,RefurbishedMartCode.RM_CATEGORY_EXITS);
 	}
 	
 	@ResponseStatus(HttpStatus.OK)

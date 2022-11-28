@@ -1,26 +1,55 @@
 package com.RefurbishedMart.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Id;
 
-import org.springframework.data.annotation.Id;
-
+@Entity
+@Table(name = "product")
 public class Product {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
 
-	private Integer prodid;
+	@Column(name = "prodid")
+	private String prodid;
+	
+	@Column(name = "prodname")
 	private String prodname;
-	private Integer type;
+	
+	@Column(name = "type")
+	private String type;
+	
+	@Column(name = "brand")
 	private String brand;
+	
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "category_id")
 	private Category category;
+	
+	@Column(name = "imgpath")
 	private String imgpath;
+	
+	@Column(name = "price")
 	private Double price;
+	
+	@Column(name = "description")
     private String description;
     
     
 	public Product() {
 
 	}
-	public Product(Integer prodid, String prodname, Integer type, String brand, Category category, String imgpath,
+	public Product(String prodid, String prodname, String type, String brand, Category category, String imgpath,
 			Double price, String description) {
 		super();
 		this.prodid = prodid;
@@ -32,10 +61,10 @@ public class Product {
 		this.price = price;
 		this.description = description;
 	}
-	public Integer getProdid() {
+	public String getProdid() {
 		return prodid;
 	}
-	public void setProdid(Integer prodid) {
+	public void setProdid(String prodid) {
 		this.prodid = prodid;
 	}
 	public String getProdname() {
@@ -44,10 +73,10 @@ public class Product {
 	public void setProdname(String prodname) {
 		this.prodname = prodname;
 	}
-	public Integer getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(Integer type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public String getBrand() {
