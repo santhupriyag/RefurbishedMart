@@ -19,4 +19,6 @@ public interface ProductService {
 
 	RefurbishedMartResponse updateProduct(Product product);
 
+	List<Product> getAllProductsByCategory(Long categoryid);
+
 }

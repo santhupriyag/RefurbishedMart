@@ -6,9 +6,6 @@ import com.RefurbishedMart.model.WishList;
 
 public class ReportController {
 	
-	public String addToWishlist(@RequestBody WishList wishlist) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

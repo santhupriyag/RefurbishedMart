@@ -21,5 +21,11 @@ public interface RefurbishedMartMessage {
 	String RM_PRODUCT_UPDATE_SUCCESS = "Product updated SucessFully!";
 	String RM_CART_ADDED = "Product added to Cart SucessFully!";
 	String RM_CART_DELETED = "Product Deleted SucessFully!";
+	String RM_PRODUCT_DELETE_SUCCESS = "Product Deleted SucessFully!";
+	String RM_CATEGORY_UPDATED = "Category Updated SucessFully!";
+	String RM_CATEGORY_DELETED = "Category Deleted SucessFully!";
+	String RM_WISHLIST_ADDED = "WishList Added SucessFully!";
+	String RM_WISHLIST_DELETED = "WishList Deleted SucessFully!";
+	String RM_ORDER_SUCCESS = "Order Placed SucessFully!";
 
 }

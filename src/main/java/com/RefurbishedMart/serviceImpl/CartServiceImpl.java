@@ -22,7 +22,7 @@ public class CartServiceImpl implements CartService {
 	public RefurbishedMartResponse addTocart(Cart cart) {
 		RefurbishedMartResponse response = new RefurbishedMartResponse();
 		boolean count=cartRepository.existsByProductid(cart.getProductid());
-		System.out.println(count);
+		
 		if(count) {
 			cartRepository.updateProductCount(cart.getProductid());
 			response.setMessage(RefurbishedMartMessage.RM_CART_ADDED);

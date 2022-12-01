@@ -37,9 +37,9 @@ public class ProductController {
 		return productService.updateProduct(product);
 	}
 	 @DeleteMapping("/deleteProduct/{id}")
-	public RefurbishedMartResponse deleteProduct(@PathVariable String prodid) {
+	public RefurbishedMartResponse deleteProduct(@PathVariable(value = "id") String id) {
 		// TODO Auto-generated method stub
-		return productService.deleteProduct(prodid);
+		return productService.deleteProduct(id);
 	}
 
 	@GetMapping("/product/{id}")
@@ -52,4 +52,10 @@ public class ProductController {
 	public List<Product> getProductList() {
 		return productService.findAll();
 	}
+	
+	    @GetMapping("/getproductsbycategory/{categoryid}")
+	    public List<Product> getAllProductsByCategory(@PathVariable(value="categoryid") Long categoryid)
+	    {
+	    	return productService.getAllProductsByCategory(categoryid);
+	    }
 }

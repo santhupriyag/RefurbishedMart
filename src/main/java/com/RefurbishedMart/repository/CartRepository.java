@@ -23,4 +23,7 @@ public interface CartRepository extends JpaRepository<Cart, Long>  {
 	@Query(value = "update cart set quantity=quantity+1 where productid=:productid",nativeQuery = true)
 	void updateProductCount(String productid);
 
+	@Transactional
+	void deleteByUserid(String userMail);
+
 }

@@ -43,8 +43,10 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public RefurbishedMartResponse deleteProduct(String prodid) {
-		// TODO Auto-generated method stub
-		return null;
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		prodRepo.deleteByProdid(prodid);
+		response.setMessage(RefurbishedMartMessage.RM_PRODUCT_DELETE_SUCCESS);
+		return response;
 	}
 
 	@Override
@@ -53,6 +55,12 @@ public class ProductServiceImpl implements ProductService {
 		prodRepo.save(product);
 		response.setMessage(RefurbishedMartMessage.RM_PRODUCT_UPDATE_SUCCESS);
 		return response;
+	}
+
+	@Override
+	public List<Product> getAllProductsByCategory(Long categoryid) {
+		// TODO Auto-generated method stub
+		return prodRepo.findByCategory_Categoryid(categoryid);
 	}
 
 }
