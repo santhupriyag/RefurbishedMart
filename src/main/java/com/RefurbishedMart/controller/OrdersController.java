@@ -35,5 +35,22 @@ public class OrdersController {
 		// TODO Auto-generated method stub
 		return ordersservice.getUserOrders(email);
 	}
+	
+	@GetMapping("/getAllOrders")
+	public List<Order> getAllOrders() {
+		// TODO Auto-generated method stub
+		return ordersservice.getAllOrders();
+	}
+	
+	@GetMapping("/getOrderById/{id}")
+	public Order getOrderById(@PathVariable Long id) {
+		// TODO Auto-generated method stub
+		return ordersservice.getOrderById(id);
+	}
+	@PostMapping("/changeOrderStatus")
+	public RefurbishedMartResponse changeOrderStatus(@RequestBody Order order) {
+		// TODO Auto-generated method stub
+		return ordersservice.changeOrderStatus(order);
+	}
 
 }

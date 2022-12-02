@@ -21,4 +21,6 @@ public interface AdminService {
 
 	List<User> getUsers();
 
+	RefurbishedMartResponse deleteUserByid(String id);
+
 }

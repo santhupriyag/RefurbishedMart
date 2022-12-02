@@ -11,4 +11,10 @@ public interface OrdersService {
 
 	List<Order> getUserOrders(String email);
 
+	List<Order> getAllOrders();
+
+	Order getOrderById(Long id);
+
+	RefurbishedMartResponse changeOrderStatus(Order order);
+
 }

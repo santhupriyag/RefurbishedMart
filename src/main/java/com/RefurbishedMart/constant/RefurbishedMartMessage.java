@@ -8,7 +8,7 @@ public interface RefurbishedMartMessage {
 	String RM_EXCPTION = "Your request is unsuccessful.Please try again later.";
 	String RM_ACCOUNT_EXITS = "Account Already Exists! Please Login";
 	String RM_USER_REGISTRED = "User SucessFully Registred";
-	String RM_USER_ACTIVE = "Active";
+	String RM_USER_ACTIVE = "ACTIVE";
 	String RM_ROLE_ADMIN = "ADMIN";
 	String RM_ROLE_USER = "USER";
 	String RM_AUTHNETICATION_FAILED = "Unable to Authenticate/Incorrect Username or Password";
@@ -27,5 +27,9 @@ public interface RefurbishedMartMessage {
 	String RM_WISHLIST_ADDED = "WishList Added SucessFully!";
 	String RM_WISHLIST_DELETED = "WishList Deleted SucessFully!";
 	String RM_ORDER_SUCCESS = "Order Placed SucessFully!";
+	String RM_USER_BLOCKED = "User Blocked Please Contact Admin!";
+	String RM_USER_DELETED = "User Deleted SucessFully!";
+	String RM_ORDER_STATUS_UPDATED = "Order Status SucessFully Updated!";
+	String RM_PASSWORD_RESET_SUCCESS = "Password Reset SucessFully! Please Login";
 
 }

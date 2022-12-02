@@ -1,6 +1,7 @@
 package com.RefurbishedMart.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -35,5 +36,28 @@ public class OrdersServiceImpl implements OrdersService{
 		
 		return ordersRepository.findByUserMail(email);
 	}
+
+	@Override
+	public List<Order> getAllOrders() {
+		// TODO Auto-generated method stub
+		return ordersRepository.findAll();
+	}
+
+	@Override
+	public Order getOrderById(Long id) {
+		Optional<Order> o=ordersRepository.findById(id);
+		// TODO Auto-generated method stub
+		return o.get();
+	}
+
+	@Override
+	public RefurbishedMartResponse changeOrderStatus(Order order) {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		ordersRepository.save(order);
+		response.setMessage(RefurbishedMartMessage.RM_ORDER_STATUS_UPDATED);
+		return response;
+	}
+
+
 
 }

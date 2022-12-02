@@ -93,7 +93,16 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public List<User> getUsers() {
 		// TODO Auto-generated method stub
-		return userRepo.findAll();
+		return userRepo.findByUsertype(RefurbishedMartMessage.RM_ROLE_USER);
+	}
+
+	@Override
+	public RefurbishedMartResponse deleteUserByid(String id) {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		userRepo.deleteByUid(id);
+		response.setMessage(RefurbishedMartMessage.RM_USER_DELETED);
+		return response;
+	
 	}
 
 }

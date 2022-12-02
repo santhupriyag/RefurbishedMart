@@ -15,6 +15,7 @@ import com.RefurbishedMart.exception.RefurbishedMartAutheticationException;
 import com.RefurbishedMart.exception.RefurbishedMartCategoryAlreadyExitsException;
 import com.RefurbishedMart.exception.RefurbishedMartException;
 import com.RefurbishedMart.exception.RefurbishedMartInvalidDataException;
+import com.RefurbishedMart.exception.RefurbishedMartUserBlockedException;
 import com.RefurbishedMart.response.RefurbishedMartErrorResponse;
 
 @ControllerAdvice(basePackages={"com.RefurbishedMart.controller"})
@@ -83,6 +84,14 @@ private static final Logger LOG = LoggerFactory.getLogger(RefurbishedMartControl
 	public RefurbishedMartErrorResponse AccountNotFound(RefurbishedMartAccountNotFound e){
 		LOG.error(e.getMessage(),e);
 		return generateErrorResponse(RefurbishedMartMessage.RM_ACCOUNT_NOT_EXITS,RefurbishedMartCode.RM_ACCOUNT_NOT_EXITS);
+	}
+	
+	@ResponseStatus(HttpStatus.OK)
+	@ExceptionHandler(RefurbishedMartUserBlockedException.class)
+	@ResponseBody
+	public RefurbishedMartErrorResponse RefurbishedMartUserBlockedException(RefurbishedMartUserBlockedException e){
+		LOG.error(e.getMessage(),e);
+		return generateErrorResponse(RefurbishedMartMessage.RM_USER_BLOCKED,RefurbishedMartCode.RM_USER_BLOCKED);
 	}
 	
 

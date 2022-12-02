@@ -11,12 +11,15 @@ import com.RefurbishedMart.exception.RefurbishedMartAccountNotFound;
 import com.RefurbishedMart.exception.RefurbishedMartAutheticationException;
 import com.RefurbishedMart.exception.RefurbishedMartException;
 import com.RefurbishedMart.exception.RefurbishedMartInvalidDataException;
+import com.RefurbishedMart.exception.RefurbishedMartUserBlockedException;
 import com.RefurbishedMart.model.User;
 import com.RefurbishedMart.repository.UserRepository;
 import com.RefurbishedMart.response.RefurbishedMartResponse;
 import com.RefurbishedMart.service.CustomerService;
+import com.RefurbishedMart.status.UserStatus;
 import com.RefurbishedMart.util.PasswordHashingUtility;
 import com.RefurbishedMart.util.UUIDUtil;
+import com.RefurbishedMart.valueobject.ForgotPasswordVo;
 
 @Component
 public class CustomerServiceImpl implements CustomerService {
@@ -51,12 +54,12 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public RefurbishedMartResponse login(User user) throws RefurbishedMartAutheticationException, RefurbishedMartException, RefurbishedMartAccountNotFound {
+	public RefurbishedMartResponse login(User user) throws RefurbishedMartAutheticationException, RefurbishedMartException, RefurbishedMartAccountNotFound, RefurbishedMartUserBlockedException {
 		RefurbishedMartResponse loginResponse = new RefurbishedMartResponse();
 		boolean count = userRepo.existsByContact_Email(user.getContact().getEmail());
 		if (count) {
 			User reg = userRepo.findByContact_Email(user.getContact().getEmail());
-
+           if(!reg.getStatus().equals(UserStatus.BLOCKED)) {
 			String hashedPassword = reg.getPassword();
 			boolean passwordVerified = verifyUserPassword(user.getPassword(), hashedPassword);
 			if (passwordVerified) {
@@ -68,6 +71,11 @@ public class CustomerServiceImpl implements CustomerService {
 				throw new RefurbishedMartAutheticationException(RefurbishedMartMessage.RM_AUTHNETICATION_FAILED);
 		
 			}
+		
+}
+else {
+	throw new RefurbishedMartUserBlockedException(RefurbishedMartMessage.RM_USER_BLOCKED);
+}
 		} else {
 			throw new RefurbishedMartAccountNotFound(RefurbishedMartMessage.RM_ACCOUNT_NOT_EXITS);
 		}
@@ -91,6 +99,21 @@ public class CustomerServiceImpl implements CustomerService {
 		RefurbishedMartResponse response = new RefurbishedMartResponse();
 		userRepo.save(user);
 		response.setMessage(RefurbishedMartMessage.RM_USER_PROFILE_UPDATE_SUCCESS);
+		return response;
+	}
+
+	@Override
+	public RefurbishedMartResponse forgotpassword(ForgotPasswordVo user) throws RefurbishedMartAccountNotFound {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		boolean count = userRepo.existsByContact_Email(user.getEmail());
+		if (count) {
+			userRepo.savepassword(user.getEmail(),passwordHashingUtility.getPasswordHash(user.getPassword()));
+			response.setMessage(RefurbishedMartMessage.RM_PASSWORD_RESET_SUCCESS);
+		}
+		else {
+			throw new RefurbishedMartAccountNotFound(RefurbishedMartMessage.RM_ACCOUNT_NOT_EXITS);
+		}
+		
 		return response;
 	}
 

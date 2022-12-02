@@ -10,6 +10,7 @@ public interface RefurbishedMartCode {
 	String RM_AUTHENTICATION_EXCPTION = "RM003";
 	String RM_ACCOUNT_NOT_EXITS ="RM004";
 	String RM_CATEGORY_EXITS = "RM005";
+	String RM_USER_BLOCKED = "RM006";
 
 
 }
