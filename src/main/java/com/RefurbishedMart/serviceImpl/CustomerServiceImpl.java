@@ -117,4 +117,11 @@ else {
 		return response;
 	}
 
+	@Override
+	public RefurbishedMartResponse dologot() {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		response.setMessage(RefurbishedMartMessage.RM_LOGOUT);
+		return response;
+	}
+
 }

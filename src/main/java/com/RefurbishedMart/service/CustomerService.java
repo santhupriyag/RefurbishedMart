@@ -25,4 +25,6 @@ public interface CustomerService {
 
 	RefurbishedMartResponse forgotpassword(ForgotPasswordVo user) throws RefurbishedMartAccountNotFound;
 
+	RefurbishedMartResponse dologot();
+
 }

@@ -40,10 +40,10 @@ public class AdminController implements UserControllerAPI {
 		return adminService.register(user);
 	}
 
+	@DeleteMapping("/userLogout")
+	public RefurbishedMartResponse logout() {
 
-	public RefurbishedMartResponse logout(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		return adminService.dologot();
 	}
 
 	@PostMapping("/editProfile")

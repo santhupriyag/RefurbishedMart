@@ -23,4 +23,6 @@ public interface AdminService {
 
 	RefurbishedMartResponse deleteUserByid(String id);
 
+	RefurbishedMartResponse dologot();
+
 }

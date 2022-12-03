@@ -20,7 +20,7 @@ public interface UserControllerAPI {
 
 	public RefurbishedMartResponse forgotpassword(@RequestBody ForgotPasswordVo user) throws RefurbishedMartAccountNotFound;
 
-	public RefurbishedMartResponse logout(@RequestBody User user);
+	public RefurbishedMartResponse logout();
 
 	public RefurbishedMartResponse editProfile(@RequestBody User user);
 

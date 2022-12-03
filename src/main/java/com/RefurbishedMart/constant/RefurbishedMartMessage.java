@@ -31,5 +31,8 @@ public interface RefurbishedMartMessage {
 	String RM_USER_DELETED = "User Deleted SucessFully!";
 	String RM_ORDER_STATUS_UPDATED = "Order Status SucessFully Updated!";
 	String RM_PASSWORD_RESET_SUCCESS = "Password Reset SucessFully! Please Login";
+	String RM_SUPPPORT_SAVED = "Message Sent SuccessFully!";
+	String RM_FEEDBACK_SAVED = "Message Sent SuccessFully!";
+	String RM_LOGOUT = "Logout SucessFull!";
 
 }
