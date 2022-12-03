@@ -30,4 +30,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	@Query(value = "update user set user.password =:password where user.contact_id =(select contact.id from contact where contact.email =:email)",nativeQuery = true)
 	void savepassword(@Param("email") String email, @Param("password") String password);
 
+	@Transactional
+	void deleteByContact_Email(String email);
+
 }

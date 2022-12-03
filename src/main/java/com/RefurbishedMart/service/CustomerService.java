@@ -27,4 +27,6 @@ public interface CustomerService {
 
 	RefurbishedMartResponse dologot();
 
+	RefurbishedMartResponse userDelete(String email);
+
 }

@@ -124,4 +124,12 @@ else {
 		return response;
 	}
 
+	@Override
+	public RefurbishedMartResponse userDelete(String email) {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		userRepo.deleteByContact_Email(email);
+		response.setMessage(RefurbishedMartMessage.RM_USER_DELETED);
+		return response;
+	}
+
 }

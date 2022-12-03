@@ -41,10 +41,16 @@ public class CustomerController implements UserControllerAPI {
 
 		return CustomerService.register(user);
 	}
+	
 	@DeleteMapping("/userLogout")
 	public RefurbishedMartResponse logout() {
 
 		return CustomerService.dologot();
+	}
+	@DeleteMapping("/userDelete/{email}")
+	public RefurbishedMartResponse userDelete(@PathVariable String email) {
+
+		return CustomerService.userDelete(email);
 	}
 	
 	@PostMapping("/editProfile")
@@ -52,6 +58,8 @@ public class CustomerController implements UserControllerAPI {
 
 		return  CustomerService.editProfile(user);
 	}
+	
+	
 	
 	@GetMapping("/getUserByMail/{email}")
 	public User getUserByMail(@PathVariable("email") String email) {
@@ -64,7 +72,6 @@ public class CustomerController implements UserControllerAPI {
 
 		return CustomerService.getUsers();
 	}
-
 	
 	@PostMapping("/forgotpassword")
 	public RefurbishedMartResponse forgotpassword(@RequestBody ForgotPasswordVo  user) throws RefurbishedMartAccountNotFound {
