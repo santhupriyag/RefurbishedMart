@@ -66,4 +66,10 @@ public class CategoryServiceImpl implements CategoryService {
 		return categoryRepository.findByCategoryid(Long.parseLong(categoryId));
 	}
 
+	@Override
+	public Category getCategoryByName(String name) {
+		// TODO Auto-generated method stub
+		return categoryRepository.findByCategoryname(name);
+	}
+
 }

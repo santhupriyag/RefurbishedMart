@@ -18,4 +18,6 @@ public interface CategoryService {
 
 	Category getCategoryById(String categoryId);
 
+	Category getCategoryByName(String name);
+
 }

@@ -39,6 +39,34 @@ public class RefurbishedMartApiTest {
 	
 	String DELETE_CART_BY_ID="/RefurbishedMart/cartcontroller/cartproducts/";
 	
+	//Category Controller APIs
+	
+	String ADD_CATEGORY="/RefurbishedMart/categoryController/addCategory";
+	
+	String UPDATE_CATEGORY="/RefurbishedMart/categoryController/updateCategory";
+	
+	String DELETE_CATEGORY="/RefurbishedMart/categoryController/deleteCategory/";
+	
+	String GET_ALL_CATEGORYS="/RefurbishedMart/categoryController/getAllCategorys";
+	
+	String GET_CATEGORY_BY_ID="/RefurbishedMart/categoryController/getCategoryById/";
+
+	String GET_CATEGORY_BY_NAME="/RefurbishedMart/categoryController/getCategoryByName/Books";
+	
+	
+	//SupportController APIs
+	
+	String ADD_SUPPORT="/RefurbishedMart/supportcontroller/saveSupport";
+	
+	String GET_SUPPORTS="/RefurbishedMart/supportcontroller/getSupports";
+	
+   
+	//FeedBack Controller APIs
+	
+	String ADD_FEEDBACK="/RefurbishedMart/feedbackcontroller/saveFeedback";
+	
+	String GET_FEEDBACKS="/RefurbishedMart/feedbackcontroller/getFeedbacks";
+	
 	
 	
 }

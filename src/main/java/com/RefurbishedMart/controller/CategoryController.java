@@ -56,5 +56,10 @@ public class CategoryController {
 		return categoryService.getCategoryById(categoryId);
 	}
 
+	@GetMapping("/getCategoryByName/{name}")
+	public Category getCategoryByName(@PathVariable String name) {
+		// TODO Auto-generated method stub
+		return categoryService.getCategoryByName(name);
+	}
 
 }

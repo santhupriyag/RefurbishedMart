@@ -5,7 +5,10 @@ import org.json.JSONObject;
 
 import com.RefurbishedMart.model.Address;
 import com.RefurbishedMart.model.Cart;
+import com.RefurbishedMart.model.Category;
 import com.RefurbishedMart.model.Contact;
+import com.RefurbishedMart.model.Feedback;
+import com.RefurbishedMart.model.Support;
 import com.RefurbishedMart.model.User;
 import com.RefurbishedMart.status.UserStatus;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -181,6 +184,43 @@ public class CommonUtility {
 	return new ObjectMapper().writeValueAsString(cart);
  }
  
+ public static String getDummyCategory() throws JsonProcessingException
+ {
+	 Category category=new Category();
+	 category.setCategoryname("Books");
+	 return new ObjectMapper().writeValueAsString(category);
+	 
+ }
  
+ public static String getDummyUpdateCategory(Long id) throws JsonProcessingException
+ {
+	 Category category=new Category();
+	 category.setCategoryid(id);
+	 category.setCategoryname("Books");
+	 return new ObjectMapper().writeValueAsString(category);
+	 
+ }
+ 
+ public static String getDummyFeedBack() throws JsonProcessingException
+ {
+      Feedback feedback=new Feedback();
+      feedback.setFirstname("priya");
+      feedback.setLastname("santu");
+      feedback.setEmail("priya@gmail.com");
+      feedback.setRating("GOOD");
+      feedback.setFeedback("Nice");
+	return new ObjectMapper().writeValueAsString(feedback);
+ }
+ 
+ public static String getDummySupport() throws JsonProcessingException
+ {
+      Support support=new Support();
+      support.setFirstname("priya");
+      support.setLastname("santu");
+      support.setEmail("priya@gmail.com");
+      support.setIssue("Request Invoice for order");
+      support.setDescription("Please send copy");
+	return new ObjectMapper().writeValueAsString(support);
+ }
  
 }
