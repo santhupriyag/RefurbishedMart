@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.RefurbishedMart.model.Address;
+import com.RefurbishedMart.model.Cart;
 import com.RefurbishedMart.model.Contact;
 import com.RefurbishedMart.model.User;
 import com.RefurbishedMart.status.UserStatus;
@@ -166,4 +167,20 @@ public class CommonUtility {
 	 
 	return new ObjectMapper().writeValueAsString(user);
  }
+ 
+ public static String getDummyCart() throws JsonProcessingException
+ {
+	 Cart cart=new Cart();
+	  cart.setUserid("1");
+	  cart.setName("13 Pro Max");
+	  cart.setDescription("mint condition");
+	  cart.setImgpath("https://di2ponv0v5otw.cloudfront.net/posts/2022/06/07/629f66b367ffb13e36774441/m_wp_629f66c57272af21acb4f46d.webp");
+      cart.setPrice(Double.parseDouble("1099"));
+      cart.setQuantity(1);
+      cart.setProductid("1");
+	return new ObjectMapper().writeValueAsString(cart);
+ }
+ 
+ 
+ 
 }

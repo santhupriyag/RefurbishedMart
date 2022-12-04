@@ -31,10 +31,7 @@ public class CartController {
 		return cartService.addTocart(cart);
 	}
 	
-	public String updateCart(@RequestBody Cart cart) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	@DeleteMapping("/cartproducts/{id}")
 	public RefurbishedMartResponse deleteCart(@PathVariable Long id) {
 		// TODO Auto-generated method stub

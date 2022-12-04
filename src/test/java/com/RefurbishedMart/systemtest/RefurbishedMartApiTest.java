@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class RefurbishedMartApiTest {
 
+//	Customer controller APIs
 	String ADD_USER = "/RefurbishedMart/customercontroller/registerUser";
 
 	String DELETE_USER = "/RefurbishedMart/customercontroller/userDelete/pa@gmail.com";
@@ -26,4 +27,18 @@ public class RefurbishedMartApiTest {
 	String GET_USER_BY_MAIL_NEGATIVE="/RefurbishedMart/customercontroller/getUserByMail/priya@gmail.com";
 	
 	String USER_FORGOTPASSWORD="/RefurbishedMart/customercontroller/forgotpassword";
+	
+	// Cart Controller APIs
+	
+	String ADD_TO_CART = "/RefurbishedMart/cartcontroller/addtocart";
+	
+	String GET_CART_BY_USERID="/RefurbishedMart/cartcontroller/getproductsbyuserid/1";
+	
+	String GET_ALL_CART_ITEMS="/RefurbishedMart/cartcontroller/getAllCartItems";
+	
+	
+	String DELETE_CART_BY_ID="/RefurbishedMart/cartcontroller/cartproducts/";
+	
+	
+	
 }
