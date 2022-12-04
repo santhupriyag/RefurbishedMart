@@ -68,5 +68,19 @@ public class RefurbishedMartApiTest {
 	String GET_FEEDBACKS="/RefurbishedMart/feedbackcontroller/getFeedbacks";
 	
 	
+	//WishList Controller APIs
 	
+	String ADD_WISHLIST="/RefurbishedMart/wishlistcontroller/addToWishlist";
+	
+	String DELETE_WISHLIST="/RefurbishedMart/wishlistcontroller/deleteFromWishlist/";
+	
+	String GET_WISHLIST_BY_USERID="/RefurbishedMart/wishlistcontroller/getwishListbyuserid/";
+	
+	//Report Controller APIs
+	
+	String GET_SALE_REPORT="/RefurbishedMart/reportcontroller/getSaleReport";
+	
+	String GET_REVENUE_REPORT="/RefurbishedMart/reportcontroller/getRevenueReport";
+	
+	String GET_REVENUE_REPORT_NEGATIVE="/RefurbishedMart/reportcontroller/getRevenueReportt";
 }

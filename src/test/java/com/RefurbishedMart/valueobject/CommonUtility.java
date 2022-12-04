@@ -10,6 +10,7 @@ import com.RefurbishedMart.model.Contact;
 import com.RefurbishedMart.model.Feedback;
 import com.RefurbishedMart.model.Support;
 import com.RefurbishedMart.model.User;
+import com.RefurbishedMart.model.WishList;
 import com.RefurbishedMart.status.UserStatus;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -221,6 +222,18 @@ public class CommonUtility {
       support.setIssue("Request Invoice for order");
       support.setDescription("Please send copy");
 	return new ObjectMapper().writeValueAsString(support);
+ }
+ public static String getDummyWishList() throws JsonProcessingException
+ {
+	 WishList wishList=new WishList();
+	 wishList.setUserid("hsa@gmail.com");
+	 wishList.setProdname("13 Pro Max");
+	 wishList.setDescription("mint condition");
+	 wishList.setImgpath("https://di2ponv0v5otw.cloudfront.net/posts/2022/06/07/629f66b367ffb13e36774441/m_wp_629f66c57272af21acb4f46d.webp");
+	 wishList.setPrice(Double.parseDouble("1099"));
+	 wishList.setBrand("Apple");
+	 wishList.setProdid("457867");
+	return new ObjectMapper().writeValueAsString(wishList);
  }
  
 }

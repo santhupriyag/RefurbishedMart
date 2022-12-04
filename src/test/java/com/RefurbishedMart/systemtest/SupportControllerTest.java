@@ -39,7 +39,7 @@ public class SupportControllerTest extends RefurbishedMartApiTest {
 				HTTP + randomServerPort + ADD_SUPPORT,
 				new HttpEntity<String>(CommonUtility.getDummySupport(), getHeaders()), RefurbishedMartResponse.class);
 
-		     Assert.assertEquals(RefurbishedMartMessage.RM_FEEDBACK_SAVED, result.getBody().getMessage());
+		     Assert.assertEquals(RefurbishedMartMessage.RM_SUPPPORT_SAVED, result.getBody().getMessage());
 	}
 	
 	@Test
