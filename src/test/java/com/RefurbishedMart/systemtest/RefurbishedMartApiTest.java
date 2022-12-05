@@ -83,4 +83,32 @@ public class RefurbishedMartApiTest {
 	String GET_REVENUE_REPORT="/RefurbishedMart/reportcontroller/getRevenueReport";
 	
 	String GET_REVENUE_REPORT_NEGATIVE="/RefurbishedMart/reportcontroller/getRevenueReportt";
+	
+	//Orders Controller APIs
+	
+	String SAVE_ORDER="/RefurbishedMart/ordercontroller/saveOrders";
+	
+	String GET_ORDER_BY_USER="/RefurbishedMart/ordercontroller/getUserOrders/";
+	
+	String GET_ALL_ORDERS="/RefurbishedMart/ordercontroller/getAllOrders";
+	
+	String GET_ORDER_BY_ID="/RefurbishedMart/ordercontroller/getOrderById/";
+	
+	String CHANGE_ORDER_STATUS="/RefurbishedMart/ordercontroller/changeOrderStatus";
+	
+	//Product Contoller APIS
+	
+	String ADD_PRODUCT="/RefurbishedMart/productcontroller/addProduct";
+	
+	String UPDATE_PRODUCT="/RefurbishedMart/productcontroller/updateProduct";
+	
+	String DELETE_PRODUCT="/RefurbishedMart/productcontroller/deleteProduct/";
+	
+	String PRODUCT_BY_ID="/RefurbishedMart/productcontroller/product/";
+	
+	String GET_ALL_PRODUCTS="/RefurbishedMart/productcontroller/findAllProducts";
+	
+	String GET_PRODUCT_CATEGORY_NAME="/RefurbishedMart/productcontroller/productByCategory/";
+	
+	
 }

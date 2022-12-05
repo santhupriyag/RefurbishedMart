@@ -47,6 +47,12 @@ public class ProductController {
 		return productService.getProductById(pId);
 
 	}
+	
+	@GetMapping("/productByCategory/{cname}")
+	public List<Product> productByCategory(@PathVariable(value = "cname") String cname) {
+		return productService.productByCategory(cname);
+
+	}
 
 	@GetMapping("/findAllProducts")
 	public List<Product> getProductList() {

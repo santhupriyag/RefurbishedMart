@@ -63,4 +63,12 @@ public class ProductServiceImpl implements ProductService {
 		return prodRepo.findByCategory_Categoryid(categoryid);
 	}
 
+	@Override
+	public List<Product> productByCategory(String cname) {
+		// TODO Auto-generated method stub
+		return prodRepo.findByCategory_Categoryname(cname);
+	}
+
+	
+
 }

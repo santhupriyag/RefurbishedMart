@@ -1,5 +1,9 @@
 package com.RefurbishedMart.valueobject;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.cfg.annotations.SetBinder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -8,6 +12,9 @@ import com.RefurbishedMart.model.Cart;
 import com.RefurbishedMart.model.Category;
 import com.RefurbishedMart.model.Contact;
 import com.RefurbishedMart.model.Feedback;
+import com.RefurbishedMart.model.Order;
+import com.RefurbishedMart.model.OrderProducts;
+import com.RefurbishedMart.model.Product;
 import com.RefurbishedMart.model.Support;
 import com.RefurbishedMart.model.User;
 import com.RefurbishedMart.model.WishList;
@@ -234,6 +241,71 @@ public class CommonUtility {
 	 wishList.setBrand("Apple");
 	 wishList.setProdid("457867");
 	return new ObjectMapper().writeValueAsString(wishList);
+ }
+ 
+ public static String getDummyOrder() throws JsonProcessingException
+ {
+	 List<OrderProducts> op=new ArrayList<OrderProducts>();
+	 OrderProducts product=new OrderProducts();
+	 product.setProductid("p1");
+	 product.setQuantity("1");
+	 product.setImgpath("https://di2ponv0v5otw.cloudfront.net/posts/2022/06/07/629f66b367ffb13e36774441/m_wp_629f66c57272af21acb4f46d.webp");
+	 product.setDescription("nice");
+	 product.setPrice("200");
+	 op.add(product);
+	 Order order=new Order();
+	 order.setUserMail("spriya@gmail.com");
+	 order.setTotalprice(1000);
+	 order.setStreet("test");
+	 order.setCity("nc");
+	 order.setState("iln");
+	 order.setZipCode("76201");
+	 order.setOp(op);
+	 order.setStatus("Pending");
+	 
+	 return new ObjectMapper().writeValueAsString(order); 
+ }
+ 
+ public static String getDummyProduct(Long id,String name) throws JsonProcessingException
+ {
+Product product=new Product();
+product.setProdname("PODS GEN 1");
+product.setType("AIrpods");
+product.setBrand("APPLE");
+Category c=new Category();
+c.setCategoryid(id);
+c.setCategoryname(name);
+product.setCategory(c);
+product.setImgpath("https://di2ponv0v5otw.cloudfront.net/posts/2022/06/07/629f66b367ffb13e36774441/m_wp_629f66c57272af21acb4f46d.webp");
+product.setDescription("nice");
+product.setPrice(112.3);
+ return new ObjectMapper().writeValueAsString(product);
+}
+ 
+ 
+ 
+ public static String getDummyProductUpadte(Long id,String name) throws JsonProcessingException
+ {
+Product product=new Product();
+product.setProdname("PODS GEN 1");
+product.setType("AIrpodss");
+product.setBrand("APPLE");
+Category c=new Category();
+c.setCategoryid(id);
+c.setCategoryname(name);
+product.setCategory(c);
+product.setImgpath("https://di2ponv0v5otw.cloudfront.net/posts/2022/06/07/629f66b367ffb13e36774441/m_wp_629f66c57272af21acb4f46d.webp");
+product.setDescription("nice");
+product.setPrice(112.3);
+ return new ObjectMapper().writeValueAsString(product);
+}
+ 
+ public static String getDummyCategoryProduct() throws JsonProcessingException
+ {
+	 Category category=new Category();
+	 category.setCategoryname("TEST");
+	 return new ObjectMapper().writeValueAsString(category);
+	 
  }
  
 }
