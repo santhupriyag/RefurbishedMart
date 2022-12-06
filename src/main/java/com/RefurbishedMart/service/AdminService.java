@@ -8,6 +8,7 @@ import com.RefurbishedMart.exception.RefurbishedMartException;
 import com.RefurbishedMart.exception.RefurbishedMartInvalidDataException;
 import com.RefurbishedMart.model.User;
 import com.RefurbishedMart.response.RefurbishedMartResponse;
+import com.RefurbishedMart.valueobject.ForgotPasswordVo;
 
 public interface AdminService {
 
@@ -24,5 +25,7 @@ public interface AdminService {
 	RefurbishedMartResponse deleteUserByid(String id);
 
 	RefurbishedMartResponse dologot();
+
+	RefurbishedMartResponse forgotpassword(ForgotPasswordVo user) throws RefurbishedMartAccountNotFound;
 
 }

@@ -17,6 +17,7 @@ import com.RefurbishedMart.response.RefurbishedMartResponse;
 import com.RefurbishedMart.service.AdminService;
 import com.RefurbishedMart.util.PasswordHashingUtility;
 import com.RefurbishedMart.util.UUIDUtil;
+import com.RefurbishedMart.valueobject.ForgotPasswordVo;
 
 @Component
 public class AdminServiceImpl implements AdminService {
@@ -108,6 +109,21 @@ public class AdminServiceImpl implements AdminService {
 	public RefurbishedMartResponse dologot() {
 		RefurbishedMartResponse response = new RefurbishedMartResponse();
 		response.setMessage(RefurbishedMartMessage.RM_LOGOUT);
+		return response;
+	}
+	
+	@Override
+	public RefurbishedMartResponse forgotpassword(ForgotPasswordVo user) throws RefurbishedMartAccountNotFound {
+		RefurbishedMartResponse response = new RefurbishedMartResponse();
+		boolean count = userRepo.existsByContact_Email(user.getEmail());
+		if (count) {
+			userRepo.savepassword(user.getEmail(),passwordHashingUtility.getPasswordHash(user.getPassword()));
+			response.setMessage(RefurbishedMartMessage.RM_PASSWORD_RESET_SUCCESS);
+		}
+		else {
+			throw new RefurbishedMartAccountNotFound(RefurbishedMartMessage.RM_ACCOUNT_NOT_EXITS);
+		}
+		
 		return response;
 	}
 

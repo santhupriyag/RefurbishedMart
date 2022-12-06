@@ -110,5 +110,17 @@ public class RefurbishedMartApiTest {
 	
 	String GET_PRODUCT_CATEGORY_NAME="/RefurbishedMart/productcontroller/productByCategory/";
 	
+	//Admin COntroller APIs
+	
+	String ADD_ADMIN_USER ="/RefurbishedMart/admincontroller/registerUser";
+	
+	String LOGIN_ADMIN_USER = "/RefurbishedMart/admincontroller/userLogin";
+	
+	String _ADMIN_LOGOUT = "/RefurbishedMart/customercontroller/userLogout";
+
+	String ADMIN_EDIT_PROFILE="/RefurbishedMart/admincontroller/editProfile";
+	
+	String DELETE_ADMIN_USER = "/RefurbishedMart/customercontroller/userDelete/reddy@gmail.com";
+	
 	
 }

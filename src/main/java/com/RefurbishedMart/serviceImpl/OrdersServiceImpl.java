@@ -52,6 +52,7 @@ public class OrdersServiceImpl implements OrdersService{
 
 	@Override
 	public RefurbishedMartResponse changeOrderStatus(Order order) {
+		System.out.println(order);
 		RefurbishedMartResponse response = new RefurbishedMartResponse();
 		ordersRepository.save(order);
 		response.setMessage(RefurbishedMartMessage.RM_ORDER_STATUS_UPDATED);

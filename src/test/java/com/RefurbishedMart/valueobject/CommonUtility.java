@@ -27,36 +27,13 @@ public class CommonUtility {
 	
 	
 	
-	public static JSONObject getUser() throws JSONException{
-		JSONObject json=new JSONObject();
-		json.put("firstname", "p");
-		json.put("lastname", "praveen");
-		json.put("username", "praveen");
-		json.put("password", "praveen");
-		JSONObject conatct=new JSONObject();
-		conatct.put("phno", "9000730500");
-		conatct.put("email", "p@gmail.com");
-		json.put("conatct", "conatct");
-		JSONObject address=new JSONObject();
-		address.put("aptno", "1-22");
-		address.put("street", "a");
-		address.put("pincode", "a");
-		address.put("city", "a");
-		address.put("state", "a");
-		address.put("country", "a");
-		json.put("address", "address");
-		return json;
-		
-		
-		
-	}
-	
+
  public static String getDummyUser() throws JsonProcessingException
  {
 	 User user=new User();
 	 user.setFirstname("p");
-	 user.setLastname("praveen");
-	 user.setUsername("praveen");
+	 user.setLastname("arun");
+	 user.setUsername("arun");
 	 user.setPassword("1234567");
 	 Contact contact=new Contact();
 	 contact.setEmail("pa@gmail.com");
@@ -73,28 +50,7 @@ public class CommonUtility {
 	return new ObjectMapper().writeValueAsString(user);
  }
  
-// public static String getDummyUserEdit() throws JsonProcessingException
-// {
-//	 User user=new User();
-//	 user.setFirstname("p");
-//	 user.setLastname("praveen");
-//	 user.setUsername("praveen");
-//	 user.setPassword("1234567");
-//	 user.setStatus("BLOCKED");
-//	 Contact contact=new Contact();
-//	 contact.setEmail("pa@gmail.com");
-//	 contact.setPhno(Long.parseLong("9000730500"));
-//	 Address address=new Address();
-//	 address.setAptno("1-22");
-//	 address.setStreet("ny");
-//	 address.setPincode(76201);
-//	 address.setCity("cs");
-//	 address.setState("NJ");
-//	 address.setCountry("US");
-//	 contact.setAddress(address);
-//	 user.setContact(contact);
-//	return new ObjectMapper().writeValueAsString(user);
-// }
+
  
  public static String getDummyLogin() throws JsonProcessingException
  {
@@ -130,16 +86,7 @@ public class CommonUtility {
 	return new ObjectMapper().writeValueAsString(user);
  }
  
- public static String getDummyLoginNegative2() throws JsonProcessingException
- {
-	 User user=new User();
 
-	 user.setPassword("1234567");
-	 Contact contact=new Contact();
-	 contact.setEmail("praveen@gmail.com");
-	 user.setContact(contact);
-	return new ObjectMapper().writeValueAsString(user);
- }
  
  public static String EditProfileDUmmy(User data) throws JsonProcessingException
  {
@@ -306,6 +253,63 @@ product.setPrice(112.3);
 	 category.setCategoryname("TEST");
 	 return new ObjectMapper().writeValueAsString(category);
 	 
+ }
+ //admin
+ 
+
+ public static String getDummyAdminUser() throws JsonProcessingException
+ {
+	 User user=new User();
+	 user.setFirstname("p");
+	 user.setLastname("Reddy");
+	 user.setUsername("reddy");
+	 user.setPassword("1234567");
+	 Contact contact=new Contact();
+	 contact.setEmail("reddy@gmail.com");
+	 contact.setPhno(Long.parseLong("984898044"));
+	 Address address=new Address();
+	 address.setAptno("1-22");
+	 address.setStreet("ny");
+	 address.setPincode(76201);
+	 address.setCity("cs");
+	 address.setState("NJ");
+	 address.setCountry("US");
+	 contact.setAddress(address);
+	 user.setContact(contact);
+	return new ObjectMapper().writeValueAsString(user);
+ }
+ 
+ public static String getDummyAdminLogin() throws JsonProcessingException
+ {
+	 User user=new User();
+
+	 user.setPassword("1234567");
+	 Contact contact=new Contact();
+	 contact.setEmail("reddy@gmail.com");
+	 user.setContact(contact);
+	return new ObjectMapper().writeValueAsString(user);
+ }
+ 
+ public static String getDummyAdminLoginNegative() throws JsonProcessingException
+ {
+	 User user=new User();
+
+	 user.setPassword("123");
+	 Contact contact=new Contact();
+	 contact.setEmail("reddy@gmail.com");
+	 user.setContact(contact);
+	return new ObjectMapper().writeValueAsString(user);
+ }
+ 
+ public static String getDummyAdminLoginNegative1() throws JsonProcessingException
+ {
+	 User user=new User();
+
+	 user.setPassword("123");
+	 Contact contact=new Contact();
+	 contact.setEmail("reddfry@gmail.com");
+	 user.setContact(contact);
+	return new ObjectMapper().writeValueAsString(user);
  }
  
 }

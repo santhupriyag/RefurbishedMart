@@ -31,7 +31,7 @@ public class CustomerControllerTest extends RefurbishedMartApiTest {
 
 	String FIRSTNAME = "priya";
 
-	String USERNAME = "praveen";
+	String USERNAME = "arun";
 
 	@Test
 	public void registerTest() throws JsonProcessingException {
